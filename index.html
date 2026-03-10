@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORJA DEL OMNISSIAH — Armería de Resina 3D</title>
+  <meta name="description" content="Catálogo de figuras impresas en resina 3D. Warhammer 40K, Age of Sigmar y Universos Alternativos. Precios en CLP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       HEADER
+       ══════════════════════════════ -->
+  <header>
+    <div class="header-border-top"></div>
+    <div class="header-eyebrow">⚙ IMPRESIÓN 3D EN RESINA · WARHAMMER 40K &amp; AGE OF SIGMAR ⚙</div>
+    <div class="skull-divider">✦ ☠ ✦</div>
+    <h1>FORJA DEL OMNISSIAH</h1>
+    <div class="subtitle">ARMERÍA DIGITAL · RESINA DE CALIDAD · ENVÍOS A TODO CHILE</div>
+    <div class="header-tagline">
+      <em>«Por la voluntad del Omnissiah, cada figura es forjada con precisión sagrada»</em>
+    </div>
+    <div class="skull-divider" style="margin-top:18px">✦ ☠ ✦</div>
+  </header>
+
+  <!-- ── PRICE LEGEND ── -->
+  <div class="price-legend">
+    <div class="price-tag"><div class="price-dot dot-infantry"></div> Infantería</div>
+    <div class="price-tag"><div class="price-dot dot-elite"></div> Élite / Escuadra</div>
+    <div class="price-tag"><div class="price-dot dot-hero"></div> Personaje / Héroe</div>
+    <div class="price-tag"><div class="price-dot dot-vehicle"></div> Vehículo / Monstruo</div>
+    <div class="price-tag" style="border-color:rgba(201,168,76,0.4); color:var(--gold)">
+      ● Disponible ahora
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       MAIN LAYOUT
+       ══════════════════════════════ -->
+  <div class="layout">
+
+    <!-- ── SIDEBAR ── -->
+    <aside>
+      <div class="sidebar-title">⚙ CATÁLOGO DE FACCIONES</div>
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-bar"
+          placeholder="Buscar unidad..."
+          autocomplete="off"
+        >
+      </div>
+      <nav id="sidebarNav">
+        <!-- Populated by catalog.js -->
+      </nav>
+    </aside>
+
+    <!-- ── MAIN CONTENT ── -->
+    <main id="mainContent">
+      <!-- Populated by catalog.js -->
+    </main>
+
+  </div><!-- /.layout -->
+
+  <!-- ══════════════════════════════
+       FOOTER
+       ══════════════════════════════ -->
+  <footer>
+    <div class="footer-skull">☠</div>
+    <div class="footer-text">FORJA DEL OMNISSIAH · IMPRESIÓN 3D EN RESINA · WARHAMMER 40K &amp; AOS</div>
+    <div class="footer-text" style="margin-top:8px; opacity:0.5">
+      Contacto: Instagram DM · WhatsApp · Precios referenciales en CLP
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════
+       CARRITO DE PRESUPUESTO
+       ══════════════════════════════ -->
+
+  <!-- Floating Cart Button -->
+  <button id="cartFloating" onclick="Cart.togglePanel()" title="Ver Presupuesto">
+    🛒
+    <span id="cartBadge"></span>
+  </button>
+
+  <!-- Overlay -->
+  <div id="cartOverlay" onclick="Cart.hidePanel()"></div>
+
+  <!-- Cart Panel -->
+  <div id="cartPanel">
+    <div class="cart-header">
+      <div>
+        <div class="cart-title">⚙ PRESUPUESTO</div>
+        <div class="cart-subtitle" id="cartCount">0 item(s)</div>
+      </div>
+      <button id="cartCloseBtn" onclick="Cart.hidePanel()">✕</button>
+    </div>
+
+    <!-- Scrollable Items -->
+    <div id="cartBody">
+      <!-- Empty state -->
+      <div id="cartEmpty">
+        <div class="empty-skull">🛒</div>
+        <p>Sin artículos aún</p>
+        <small>Agrega figuras con el botón<br>"🛒 AL PRESUPUESTO"</small>
+      </div>
+      <!-- Items list -->
+      <div id="cartItems"></div>
+    </div>
+
+    <!-- Footer with Total & Actions -->
+    <div class="cart-footer">
+      <div id="cartTotalRow" class="cart-total-row" style="display:none">
+        <div class="cart-total-label">Total Estimado</div>
+        <div id="cartTotal" class="cart-total-value">$0</div>
+      </div>
+      <div id="cartActions">
+        <button class="btn-export btn-export-whatsapp"
+                onclick="Cart.exportWhatsApp('56900000000')">
+          📱 Enviar por WhatsApp
+        </button>
+        <button class="btn-export btn-export-txt"
+                onclick="Cart.exportText()">
+          📄 Descargar Presupuesto (.txt)
+        </button>
+        <button class="btn-clear" onclick="if(confirm('¿Limpiar todo el presupuesto?')) Cart.clear()">
+          ✕ Limpiar presupuesto
+        </button>
+      </div>
+      <div id="cartDisclaimer" style="margin-top:10px; font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--grey); letter-spacing:1px; text-align:center; opacity:0.7">
+        Precios referenciales en CLP · Sujetos a disponibilidad
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       SCRIPTS (orden importante)
+       ══════════════════════════════ -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/catalog.js"></script>
+
+</body>
+</html>
