@@ -10,7 +10,7 @@ const FACTIONS = {
     lore: 'Hijos del Ángel Sanguinius, portadores de la Rabia Negra.',
     subfactions: {
       'Infantería': [
-        { name: 'Librarian', type: 'hero', price: 15000, img: 'Librarian.png', imgPainted: 'Librarian_Painted.png' },
+        { name: 'Librarian', type: 'hero', price: 15000, img: 'Librarian.png', imgPainted: 'Librarian_painted.png' },
         { name: 'Death Company Squad', type: 'elite', price: 25000, img: 'Death_company.png', imgPainted: 'Death_company_painted.png' },
         { name: 'Aerial Knights Squad', type: 'elite', price: 25000, img: 'Aerial_knight.png', imgPainted: 'Aerial_knight_painted.png' },
       ],
