@@ -7,7 +7,6 @@ let currentFaction = 'space-marines';
 let searchQuery = '';
 const imgState = {};
 
-// ── PRICE FORMAT ──
 function formatPrice(n) {
   return n.toLocaleString('es-CL');
 }
@@ -26,6 +25,8 @@ function renderFaction(factionKey) {
       )
     : data.subfactions;
 
+  const hasLore = !!data.loreFull;
+
   let html = `
     <div class="faction-header">
       <div class="faction-header-icon">${data.icon}</div>
@@ -33,7 +34,22 @@ function renderFaction(factionKey) {
         <h2>${data.name}</h2>
         <p>${data.lore}</p>
       </div>
-    </div>`;
+      ${hasLore ? `
+      <button class="btn-lore" onclick="toggleLore('lore-${factionKey}')" title="Ver lore de la facción">
+        <span class="btn-lore-icon">📖</span>
+        <span class="btn-lore-text">LORE</span>
+      </button>` : ''}
+    </div>
+    ${hasLore ? `
+    <div class="lore-panel" id="lore-${factionKey}">
+      <div class="lore-panel-inner">
+        <div class="lore-panel-header">
+          <span class="lore-panel-title">☠ TRASFONDO · ${data.name.toUpperCase()} ☠</span>
+          <button class="lore-close" onclick="toggleLore('lore-${factionKey}')">✕ CERRAR</button>
+        </div>
+        <div class="lore-panel-body">${data.loreFull}</div>
+      </div>
+    </div>` : ''}`;
 
   if (Object.keys(filtered).length === 0) {
     html += `<div class="units-grid"><div class="empty-state">No se encontraron unidades para "<em>${searchQuery}</em>"</div></div>`;
@@ -50,6 +66,17 @@ function renderFaction(factionKey) {
   });
 
   main.innerHTML = html;
+}
+
+// ── TOGGLE LORE PANEL ──
+function toggleLore(panelId) {
+  const panel = document.getElementById(panelId);
+  if (!panel) return;
+  const isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open');
+  if (!isOpen) {
+    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+  }
 }
 
 // ── BUILD CARD HTML ──
@@ -111,25 +138,21 @@ function buildImageContent(unit, factionKey) {
 
 // ── TOGGLE IMAGE (resina / pintado) ──
 function toggleImg(faction, sub, i, btn, imgResina, imgPintado) {
-  const key    = `${faction}-${sub}-${i}`;
-  const inner  = document.getElementById(`inner-${faction}-${sub}-${i}`);
-  const lbl    = document.getElementById(`lbl-${faction}-${sub}-${i}`);
+  const key   = `${faction}-${sub}-${i}`;
+  const inner = document.getElementById(`inner-${faction}-${sub}-${i}`);
+  const lbl   = document.getElementById(`lbl-${faction}-${sub}-${i}`);
 
   imgState[key] = !imgState[key];
   const showingPainted = imgState[key];
 
-  // Cambiar imagen
   if (inner) {
     const src = showingPainted ? imgPintado : imgResina;
     if (src) {
       inner.innerHTML = `<img src="img/${src}" alt="" style="width:100%;height:100%;object-fit:cover;transition:opacity 0.35s;">`;
     }
-    // Animación fade
     inner.style.opacity = '0';
     setTimeout(() => { inner.style.opacity = '1'; }, 50);
   }
-
-  // Actualizar etiqueta y botón
   if (lbl) lbl.textContent = showingPainted ? 'PINTADO' : 'RESINA';
   if (btn) btn.textContent = showingPainted ? '🔩 VER RESINA' : '🎨 VER PINTADO';
 }
@@ -142,7 +165,6 @@ function showFaction(key, el) {
   document.querySelectorAll('.faction-btn').forEach(b => b.classList.remove('active'));
   if (el) el.classList.add('active');
   renderFaction(key);
-  // Scroll main content to top
   document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
@@ -150,10 +172,7 @@ function showFaction(key, el) {
 function initSearch() {
   document.getElementById('searchInput').addEventListener('input', function () {
     searchQuery = this.value.toLowerCase().trim();
-    if (searchQuery.length === 0) {
-      renderFaction(currentFaction);
-      return;
-    }
+    if (searchQuery.length === 0) { renderFaction(currentFaction); return; }
     renderGlobalSearch(searchQuery, this.value);
   });
 }
@@ -183,9 +202,7 @@ function renderGlobalSearch(query, rawQuery) {
     });
   });
 
-  if (found === 0) {
-    html += `<div class="empty-state">No se encontraron resultados para "<em>${rawQuery}</em>"</div>`;
-  }
+  if (found === 0) html += `<div class="empty-state">No se encontraron resultados para "<em>${rawQuery}</em>"</div>`;
   html += `</div>`;
   main.innerHTML = html;
 }
@@ -194,7 +211,6 @@ function renderGlobalSearch(query, rawQuery) {
 function buildSidebar() {
   const aside = document.getElementById('sidebarNav');
   let html = '';
-
   Object.entries(SIDEBAR_GROUPS).forEach(([group, keys]) => {
     html += `<div class="sidebar-section-label">${group}</div>`;
     keys.forEach(key => {
@@ -210,7 +226,6 @@ function buildSidebar() {
         </button>`;
     });
   });
-
   aside.innerHTML = html;
 }
 
