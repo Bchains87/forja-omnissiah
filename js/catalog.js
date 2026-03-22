@@ -108,8 +108,6 @@ function renderFaction(factionKey) {
       )
     : data.subfactions;
 
-  const hasLore = !!data.loreFull;
-
   let html = `
     <div class="faction-header">
       <div class="faction-header-icon">${data.icon}</div>
@@ -117,22 +115,7 @@ function renderFaction(factionKey) {
         <h2>${data.name}</h2>
         <p>${data.lore}</p>
       </div>
-      ${hasLore ? `
-      <button class="btn-lore" onclick="toggleLore('lore-${factionKey}')" title="Ver lore de la facción">
-        <span class="btn-lore-icon">📖</span>
-        <span class="btn-lore-text">LORE</span>
-      </button>` : ''}
-    </div>
-    ${hasLore ? `
-    <div class="lore-panel" id="lore-${factionKey}">
-      <div class="lore-panel-inner">
-        <div class="lore-panel-header">
-          <span class="lore-panel-title">☠ TRASFONDO · ${data.name.toUpperCase()} ☠</span>
-          <button class="lore-close" onclick="toggleLore('lore-${factionKey}')">✕ CERRAR</button>
-        </div>
-        <div class="lore-panel-body">${data.loreFull}</div>
-      </div>
-    </div>` : ''}`;
+    </div>`;
 
   if (Object.keys(filtered).length === 0) {
     html += `<div class="units-grid"><div class="empty-state">No se encontraron unidades para "<em>${searchQuery}</em>"</div></div>`;
@@ -151,16 +134,6 @@ function renderFaction(factionKey) {
   main.innerHTML = html;
 }
 
-// ── TOGGLE LORE PANEL ──
-function toggleLore(panelId) {
-  const panel = document.getElementById(panelId);
-  if (!panel) return;
-  const isOpen = panel.classList.contains('open');
-  panel.classList.toggle('open');
-  if (!isOpen) {
-    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
-  }
-}
 
 // ── BUILD CARD HTML ──
 function buildCard(unit, tc, factionKey, subfaction, i, cartId) {
