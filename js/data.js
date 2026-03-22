@@ -20,8 +20,8 @@ Pese a su maldición, los Blood Angels son artistas, poetas y maestros del comba
         { name: 'Aerial Knights Squad', type: 'elite', price: 25000, img: 'aerial_knight.png', imgPainted: 'aerial_knight_painted.png' },
       ],
       'Personajes Especiales': [
-        { name: 'Captain Kenneth — El Ángel de Sangre', type: 'hero', price: 20000, img: null },
-        { name: 'Mephiston — Señor de la Muerte', type: 'hero', price: 22000, img: null },
+        { name: 'Captain Kenneth — El Ángel de Sangre', type: 'hero', price: 20000, img: 'capitan_kenneth_sin_fondo.png', imgPainted: 'capitan_kenneth_sin_fondo_painted.png' },
+        { name: 'Mephiston — Señor de la Muerte', type: 'hero', price: 22000, img: 'mephiston.png', imgPainted: 'mephiston_painted.png' },
       ],
     }
   },
@@ -36,16 +36,16 @@ Pero Caliban ya no existe. Destruido en el cataclismo de la Herejía de Horus, s
 Los <em>Fallen</em> —traidores que escaparon al Warp— son cazados en silencio por los <strong>Deathwing</strong> y los <strong>Ravenwing</strong>, las órdenes más secretas del capítulo. Ningún Dark Angel morirá en paz hasta que el último Caído sea capturado y absuelto. Su lealtad al Emperador es total... pero sus secretos los hacen peligrosos incluso para sus hermanos.`,
     subfactions: {
       'Personajes': [
-        { name: 'Chaplain Mordekai', type: 'hero', price: 18000, img: null },
-        { name: "Lion El'Jonson (Primarca)", type: 'hero', price: 30000, img: null },
-        { name: 'Paladin Lion El Johnson', type: 'hero', price: 28000, img: null },
+        { name: 'Chaplain Mordekai', type: 'hero', price: 18000, img: 'mordekai.png', imgPainted: 'mordekai_painted.png' },
+        { name: "Lion El'Jonson (Primarca)", type: 'hero', price: 30000, img: 'lion.png', imgPainted: 'lion_painted.png' },
+        { name: 'Paladin Lion El Johnson', type: 'hero', price: 28000, img: 'lion_paladin.png', imgPainted: 'lion_paladin_painted.png' },
       ],
       'Escuadras': [
-        { name: 'Inceptors Squad (con Jump Packs)', type: 'elite', price: 28000, img: null },
-        { name: 'Intercessor Squad', type: 'infantry', price: 22000, img: null },
+        { name: 'Inceptors Squad', type: 'elite', price: 28000, img: 'inceptor.png', imgPainted: 'inceptor_painted.png' },
+        { name: 'Intercessor Squad', type: 'infantry', price: 22000, img: 'intercessor.png', imgPainted: 'intercessor_painted.png'},
       ],
       'Vehículos': [
-        { name: 'Redemptor Dreadnought', type: 'vehicle', price: 45000, img: null },
+        { name: 'Redemptor Dreadnought', type: 'vehicle', price: 45000, img: 'dreadnought.png' , imgPainted: 'dreadnought_painted.png' },
       ],
     }
   },
@@ -60,7 +60,7 @@ No siguen el Codex Astartes. Sus compañías son <em>Grandes Empresas</em>, lide
 El don de Fenris es también su maldición: la <em>Maldición del Wulfen</em> acecha en cada sangre lobo. Y cuando Leman Russ desapareció en el Eye of Terror prometiendo regresar al final de los tiempos, los Space Wolves juraron esperarlo. Porque los lobos siempre vuelven a casa.`,
     subfactions: {
       'Escuadras': [
-        { name: 'Sons of Fenrir Exterminator Tactical Squad', type: 'infantry', price: 22000, img: null },
+        { name: 'Sons of Fenrir Exterminator Tactical Squad', type: 'infantry', price: 22000, img: 'fenrir_exterminator.png', imgPainted: 'fenrir_exterminator_painted.png' },
         { name: 'Wolf Guard Terminators (2e)', type: 'elite', price: 25000, img: null },
         { name: 'Selene Hunters (HL177)', type: 'elite', price: 22000, img: null },
       ],
