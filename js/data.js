@@ -82,18 +82,14 @@ Macragge, su mundo natal, es un joya civilizada en un universo brutal. Los Ultra
     subfactions: {
       'Primarcas': [
         { name: 'Roboute Guilliman (Primarca)', type: 'hero', price: 35000, img: null },
-        { name: "Vulkan He'Stan", type: 'hero', price: 25000, img: null },
       ],
       'Personajes': [
         { name: 'Marneus Calgar + Victrix Guard', type: 'hero', price: 35000, img: null },
-        { name: 'Grimaldus', type: 'hero', price: 18000, img: null },
         { name: 'Titus (Space Marine 2)', type: 'hero', price: 20000, img: null },
         { name: 'Quintus Aexius — Conditor', type: 'hero', price: 18000, img: null },
-        { name: 'Marshal Gift #17 (Red Pilgrim)', type: 'hero', price: 18000, img: null },
       ],
       'Escuadras': [
         { name: 'Malum Caedo Squad (Boltgun/Melta/Plasma)', type: 'infantry', price: 25000, img: null },
-        { name: 'Hijos del Emperador 30K', type: 'infantry', price: 22000, img: null },
       ],
     }
   },
@@ -212,7 +208,6 @@ Pero cada vez que mueren y son <strong>Reforjados</strong>, pierden algo de sí 
       'Personajes': [
         { name: 'Lord Commander Bastian Carthalos', type: 'hero', price: 25000, img: null },
         { name: 'Ionus Cryptborn con Dragón', type: 'hero', price: 65000, img: null },
-        { name: 'Ushoran Mortarch of Delusion', type: 'hero', price: 50000, img: null },
       ],
     }
   },
@@ -367,6 +362,71 @@ La <strong>Colección Asgardian</strong>, por ejemplo, reimagina a los Space Mar
       ],
     }
   },
+  'salamanders': {
+    name: 'Salamanders',
+    icon: '🔥',
+    lore: 'Forjadores de Nocturne. Maestros del fuego y la artesanía sagrada.',
+    loreFull: `Los Salamanders son el capítulo XVIII del Adeptus Astartes, forjados en el mundo volcánico de <strong>Nocturne</strong>, donde la supervivencia depende del fuego y del acero. Su Primarca, <strong>Vulkan</strong>, era antes de todo un herrero: aprendió que la fuerza sin habilidad es solo violencia, y que el verdadero poder reside en lo que se crea con las propias manos.
+
+A diferencia de la mayoría de capítulos, los Salamanders <em>recuerdan</em> que eran humanos. Regresan a sus pueblos entre campañas. Conocen los nombres de sus familias. Defienden a los civiles cuando otros capítulos los considerarían daño colateral aceptable.
+
+Pero no confundas su humanidad con debilidad. Sus <strong>Flamers y Meltaguns</strong> son los mejores equipados del Adeptus Astartes, forjados a mano por cada guerrero. Sus <em>Dragones de Fuego</em> llevan el regalo de Vulkan: la capacidad de caminar en el fuego y salir más fuertes. Y su Portador de la Llama Sagrada, <strong>Vulkan He'Stan</strong>, busca las Nueve Reliquias de su Primarca esparcidas por la galaxia, convencido de que su regreso despertará a Vulkan del sueño eterno.`,
+    subfactions: {
+      'Personajes': [
+        { name: "Vulkan He'Stan (Portador de la Llama)", type: 'hero', price: 25000, img: null },
+      ],
+    }
+  },
+  'black-templars': {
+    name: 'Black Templars',
+    icon: '✠',
+    lore: 'La cruzada eterna. No hay paz entre los campeones del Emperador.',
+    loreFull: `Los Black Templars son los cruzados eternos del Imperium. Nacidos de los <strong>Imperial Fists</strong> tras la Segunda Fundación, su Alto Marshal <em>Sigismund</em> —el campeón supremo del Emperador— los lanzó en una cruzada que nunca ha terminado. No tienen mundo natal. Su flota es su hogar, y la guerra su propósito.
+
+No siguen el Codex Astartes. Sus <strong>Marshals</strong> comandan Cruzadas de tamaño variable, desde docenas hasta miles de guerreros. Sus <em>Neófitos</em> pelean al lado de los veteranos desde el primer día. No tienen Librarians —rechazan los psíquicos por considerarlos una herejía— y en cambio canalizan su fe en el Dios-Emperador directamente a través de sus <strong>Chaplains</strong>.
+
+Son el capítulo más grande del Adeptus Astartes, esparcido por toda la galaxia en cruzadas simultáneas. Su grito de batalla es una oración. Su doctrina es el asalto. Y cuando un Black Templar cae, muere con una jaculatoria en los labios y un enemigo del Emperador atravesado en su espada.`,
+    subfactions: {
+      'Personajes': [
+        { name: 'Grimaldus (Reclusiarch de Helsreach)', type: 'hero', price: 18000, img: null },
+        { name: 'Marshal Gift #17 (Red Pilgrim)', type: 'hero', price: 18000, img: null },
+      ],
+    }
+  },
+  'flesh-eater-courts': {
+    name: 'Flesh-Eater Courts',
+    icon: '🦴',
+    lore: 'Los reyes de la ilusión. Caballeros malditos que no saben lo que son.',
+    loreFull: `Los Flesh-Eater Courts son quizás la facción más trágica de los Reinos Mortales. Son <strong>vampiros</strong> —no-muertos corrompidos por el don de Nagash— atrapados en una ilusión colectiva tan poderosa que ni ellos mismos pueden ver la verdad.
+
+En sus mentes, son <em>caballeros nobles</em> sirviendo a reyes poderosos en cortes esplendorosas. Sus señores son paladines. Sus guerreros son guardias reales. Sus festines son banquetes elegantes. La realidad es diferente: son ghouls salvajes devorando carne cruda en ruinas, creyendo que están comiendo finos manjares en salones dorados.
+
+Su rey, <strong>Ushoran el Señor de las Máscaras</strong>, fue una vez el espejo de Nagash, el más bello y astuto de sus sirvientes. Pero al contemplar el <em>Espejo Oscuro</em>, la ilusión de grandeza lo consumió. Ahora viaja entre sus cortes convencido de ser un gran rey restaurando el Imperium Mortis, sin saber que lidera hordas de caníbales devorando todo a su paso.
+
+Lo más perturbador: si alguien logra romper la ilusión de un Flesh-Eater, el shock de ver la realidad suele volverlos inmediatamente a la locura. La mentira es más misericordiosa que la verdad.`,
+    subfactions: {
+      'Personajes': [
+        { name: 'Ushoran Mortarch of Delusion', type: 'hero', price: 50000, img: null },
+      ],
+    }
+  },
+  'emperors-children': {
+    name: "Emperor's Children — 30K",
+    icon: '🎭',
+    lore: 'La Legión III. La perfección corrompida al servicio de Slaanesh.',
+    loreFull: `Antes de la Herejía de Horus, los <strong>Emperor's Children</strong> eran la Legión III: los más elegantes, los más hábiles, los más perfectos entre los hijos del Emperador. Su Primarca, <strong>Fulgrim</strong>, era un maestro del arte y el combate, obsesionado con alcanzar la perfección absoluta en todo.
+
+Esa obsesión los destruyó. Cuando Fulgrim descubrió la <em>Espada de Laer</em>, una reliquia psíquica de una raza xeno que ya adoraba a Slaanesh, el Príncipe del Exceso entró en su alma y comenzó a corromperla. La búsqueda de la perfección se convirtió en la búsqueda del placer extremo, y el placer extremo se convirtió en atrocidad.
+
+En el asedio de <strong>Isstvan III</strong>, los Emperor's Children masacraron a sus propios hermanos leales. En la Batalla de Terra, fueron los primeros en escalar las murallas del Palacio Imperial. Y cuando la Herejía terminó y huyeron al Eye of Terror, los que quedaban eran <strong>devotos totales de Slaanesh</strong>: guerreros que buscan sensaciones más allá de lo humano, que han olvidado qué era la perfección y solo recuerdan el anhelo insaciable.
+
+Sus escuadrones de <em>Noise Marines</em> usan las <strong>Blastmasters</strong> —instrumentos de destrucción que son literalmente música amplificada hasta convertirse en arma— y marchan al combate con el estruendo de un concierto del Caos.`,
+    subfactions: {
+      'Legión III — Era de la Herejía': [
+        { name: 'Hijos del Emperador 30K', type: 'infantry', price: 22000, img: null },
+      ],
+    }
+  },
   'otros': {
     name: 'Otros Universos',
     icon: '🎮',
@@ -395,9 +455,9 @@ const TYPE_CONFIG = {
 
 // Sidebar groups
 const SIDEBAR_GROUPS = {
-  'IMPERIUM': ['space-marines', 'dark-angels', 'space-wolves', 'ultramarines', 'sm-general', 'sororitas', 'custodes', 'astra', 'imperial-knights'],
-  'CAOS': ['chaos-general', 'chaos-khorne', 'chaos-nurgle'],
-  'AGE OF SIGMAR': ['skaven', 'stormcast'],
+  'IMPERIUM': ['space-marines', 'dark-angels', 'space-wolves', 'ultramarines', 'salamanders', 'black-templars', 'sm-general', 'sororitas', 'custodes', 'astra', 'imperial-knights'],
+  'CAOS': ['chaos-general', 'chaos-khorne', 'chaos-nurgle', 'emperors-children'],
+  'AGE OF SIGMAR': ['skaven', 'stormcast', 'flesh-eater-courts'],
   'XENOS': ['tau', 'necrons', 'tyranids'],
   'ESPECIALES': ['proxies', 'otros'],
 };
