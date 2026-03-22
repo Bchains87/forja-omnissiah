@@ -15,9 +15,9 @@ Su mayor tormento es la <strong>Rabia Negra</strong>: una psicosis hereditaria q
 Pese a su maldición, los Blood Angels son artistas, poetas y maestros del combate aéreo. Sus fortalezas son catedrales, sus armaduras reliquias de arte, y su nombre es sinónimo de sacrificio glorioso en nombre del Dios-Emperador.`,
     subfactions: {
       'Infantería': [
-        { name: 'Librarian (1x)', type: 'hero', price: 15000, img: null },
-        { name: 'Death Company Squad (+ Jump Packs)', type: 'elite', price: 25000, img: null },
-        { name: 'Aerial Knights Squad (DMS)', type: 'elite', price: 25000, img: null },
+        { name: 'Librarian', type: 'hero', price: 15000, img: 'librarian.png', imgPainted: 'librarian_painted.png' },
+        { name: 'Death Company Squad', type: 'elite', price: 25000, img: 'death_company.png', imgPainted: 'death_company_painted.png' },
+        { name: 'Aerial Knights Squad', type: 'elite', price: 25000, img: 'aerial_knight.png', imgPainted: 'aerial_knight_painted.png' },
       ],
       'Personajes Especiales': [
         { name: 'Captain Kenneth — El Ángel de Sangre', type: 'hero', price: 20000, img: null },
