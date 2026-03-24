@@ -82,9 +82,9 @@ const FACTIONS = {
     
     subfactions: {
       'Vehículos': [
-        { name: 'Rhino (Transporte modular)', type: 'vehicle', price: 35000, img: null },
-        { name: 'Razorback (Rhino modificado)', type: 'vehicle', price: 38000, img: null },
-        { name: 'Invader ATV (Gatling/Multi-melta)', type: 'vehicle', price: 28000, img: null },
+        { name: 'Rhino (Transporte modular)', type: 'vehicle', price: 35000, img: 'rhino.png',  imgPainted: 'rhino_painted.png' },
+        { name: 'Ferox Taurus Rhino ', type: 'vehicle', price: 38000, img: 'ferox_taurus.png', imgPainted: 'ferox_taurus_painted.png' },
+        { name: 'Invader ATV (Gatling/Multi-melta)', type: 'vehicle', price: 28000, img: 'invader_atv.png', imgPainted: 'invader_atv_painted.png' },
         { name: 'Primaris Invictor Tactical Warsuit', type: 'vehicle', price: 45000, img: null },
         { name: 'Aximus Dreadnought (Laserforge)', type: 'vehicle', price: 40000, img: null },
         { name: 'Redemptor Dreadnought SW', type: 'vehicle', price: 45000, img: null },
@@ -293,7 +293,7 @@ const FACTIONS = {
     
     subfactions: {
       'Personajes': [
-        { name: "Vulkan He'Stan (Portador de la Llama)", type: 'hero', price: 25000, img: null },
+        { name: "Vulkan He'Stan (Portador de la Llama)", type: 'hero', price: 25000, img: 'vulkan.png', imgPainted: 'vulkan_painted.png' },
       ],
     }
   },
@@ -304,8 +304,8 @@ const FACTIONS = {
     
     subfactions: {
       'Personajes': [
-        { name: 'Grimaldus (Reclusiarch de Helsreach)', type: 'hero', price: 18000, img: null },
-        { name: 'Marshal Gift #17 (Red Pilgrim)', type: 'hero', price: 18000, img: null },
+        { name: 'Grimaldus (Reclusiarch de Helsreach)', type: 'hero', price: 18000, img: 'grimaldus.png', imgPainted: 'grimaldus_painted.png' },
+        { name: 'Marshal ', type: 'hero', price: 18000, img: 'marshal.png', imgPainted: 'marshal_painted.png' },
       ],
     }
   },
